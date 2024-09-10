@@ -1,0 +1,96 @@
+= README
+:doctype: article
+:fragment:
+:repository-url: https://github.com/dro-id/dev-workspaces
+:!showtitle:
+:icons: font
+:imagesdir: docs/assets/img
+:hardbreaks-option:
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+
+// Standard shields and technology skills
+++++
+<div style="text-align: center"  align="center">
+  <!-- Repository statistics-->
+  <a href="https://github.com/dro-id/dev-workspaces/graphs/contributors"><img src="https://img.shields.io/github/contributors/marc-0x01/nixos-config.png?style=for-the-badge" alt="https://img.shields.io/github/contributors/marc-0x01/nixos-config"></a>
+  <a href="https://github.com/dro-id/dev-workspaces/network/members"><img src="https://img.shields.io/github/forks/marc-0x01/nixos-config.svg?style=for-the-badge" alt="https://img.shields.io/github/forks/marc-0x01/nixos-config"></a>
+  <a href="https://github.com/dro-id/dev-workspaces/stargazers"><img src="https://img.shields.io/github/stars/marc-0x01/nixos-config.svg?style=for-the-badge" alt="https://img.shields.io/github/stars/marc-0x01/nixos-config"></a>
+  <a href="https://github.com/dro-id/dev-workspaces/issues"><img src="https://img.shields.io/github/issues/marc-0x01/nixos-config.svg?style=for-the-badge" alt="https://img.shields.io/github/issues/marc-0x01/nixos-config"></a>
+  <a href="https://github.com/dro-id/dev-workspaces/blob/master/LICENSE"><img src="https://img.shields.io/github/license/marc-0x01/nixos-config.svg?style=for-the-badge" alt="https://img.shields.io/github/license/marc-0x01/nixos-config"></a>
+  <!-- Main Technologies -->
+  <a href="https://nixos.org/"><img src="https://img.shields.io/badge/-nixos-grey.svg?style=for-the-badge&logo=nixos" alt="https://img.shields.io/badge/-nixos-grey"></a>
+</div>
+<br>
+++++
+
+// Header
+
+++++
+<div style="text-align: center"  align="center">
+  <br>
+  <pre>
+  </pre>
+	<h1>NixOS Configurations</h1>
+	<p style="text-align: center"  align="center">
+		<i><b>🚀 devlopment workspaces configurations!</b></i>
+	</p>
+</div>
+++++
+
+=== About
+
+Some prebuilt workspaces built with `devenv` to develop on the main stack we use!  
+
+=== Features
+
+* 🚀 Configuration of development workspaces via `devenv`
+* Complete with scripts, precommit, additional packages and more
+* Devcontainer and vscode enabled to use in GitHub Codespace or Coder
+* 🧩 All configurations are `flake` based and system agnostic with `flake-parts`
+
+🔜 TODO
+
+* [ ] Create prebuilt Codespaces automatically
+
+=== Installation
+
+Be sure to have Nix installed for your system if you want to use them directly.
+
+=== Usage
+
+[source,bash]
+----
+  nix develop --impure https://github.com/dro-id/dev-workspace#<devenv-configuration>
+----
+
+Or if you clone it
+
+[source,bash]
+----
+  nixos-rebuild switch --flake .#<devenv-configuration>
+----
+
+=== Contributing
+
+I don't claim to be an expert at `Nix`, so there are certainly improvements that could be made. + 
+Feel free to suggest them! 
+
+=== Acknowledgements
+
+Big thanks to all those great projects and the Nix maintainers.
+
+* https://nixos.org/[nixOS ecosystem] and the awesome https://github.com/nix-community[nix community]
+* https://github.com/nix-community/NUR[NUR] for those package that need to be build from source
+* https://devenv.sh/[devenv] harmonizing the development environments
+
+=== License
+
+⚖️ link:./LICENSE[MIT]
+
+=== Authors
+
+👨🏻‍💻 https://github.com/marc-0x01[@marc-0x01]
