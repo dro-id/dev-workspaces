@@ -82,7 +82,10 @@
 
   # Pre-commit hooks: Nix
   pre-commit.hooks = {
-    nixfmt.enable = true;
+    nixfmt = {
+      enable = true;
+      package = pkgs.nixfmt-classic;
+    };
     alejandra.enable = true;
     deadnix.enable = true;
   };
