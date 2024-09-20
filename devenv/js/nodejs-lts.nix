@@ -131,6 +131,7 @@
 
   # Startup commands
   enterShell = ''
+    pre-commit uninstall # the script is there but not installed by default 
     clear
     echo "【ツ】Welcome to your 🦎 Javascript Sandbox!"
     echo "node version: $(node --version)"
