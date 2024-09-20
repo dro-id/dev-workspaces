@@ -203,5 +203,5 @@ fabric.properties
 *.qcow2
 
 # Generated
-.devcontainer.json
+.pre-commit-config.yaml
 .devenv/
