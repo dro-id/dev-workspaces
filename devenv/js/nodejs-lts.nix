@@ -1,4 +1,9 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, ... }: 
+
+let
+  enableAllPrecommitHooks = false;
+in
+{
 
   name = "Node Development Sandbox";
 
@@ -85,7 +90,7 @@
 
   # Pre-commit hooks: Javascript
   pre-commit.hooks = {
-    eslint.enable = true;
+    eslint.enable = enableAllPrecommitHooks;
   };
 
   # Additional services (attached resources)
@@ -131,7 +136,6 @@
 
   # Startup commands
   enterShell = ''
-    pre-commit uninstall
     clear
     echo "【ツ】Welcome to your 🦎 Javascript Sandbox!"
     echo "node version: $(node --version)"

@@ -1,4 +1,9 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, ... }: 
+
+let
+  enableAllPrecommitHooks = false;
+in
+{
 
   name = "Nix Development Sandbox";
  
@@ -83,11 +88,11 @@
   # Pre-commit hooks: Nix
   pre-commit.hooks = {
     nixfmt = {
-      enable = true;
+      enable = enableAllPrecommitHooks;
       package = pkgs.nixfmt-classic;
     };
-    alejandra.enable = true;
-    deadnix.enable = true;
+    alejandra.enable = enableAllPrecommitHooks;
+    deadnix.enable = enableAllPrecommitHooks;
   };
 
   # Additional services (attached resources)
@@ -138,7 +143,6 @@
 
   # Startup commands
   enterShell = ''
-    pre-commit uninstall
     clear
     echo "【ツ】Welcome to your ❄ Nix Sandbox!"
     nix --version

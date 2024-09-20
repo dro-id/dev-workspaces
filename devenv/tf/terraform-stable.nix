@@ -1,4 +1,9 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, ... }: 
+
+let
+  enableAllPrecommitHooks = false;
+in
+{
 
   name = "Terraform Development Sandbox";
 
@@ -89,8 +94,8 @@
   
   # Pre-commit hooks: Terraform
   pre-commit.hooks = {
-    terraform-format.enable = true; # formatter
-    tflint.enable = true;           # linter
+    terraform-format.enable = enableAllPrecommitHooks; # formatter
+    tflint.enable = enableAllPrecommitHooks;           # linter
   };
 
   # Additional services (attached resources)
@@ -146,7 +151,6 @@
 
   # Startup commands
   enterShell = ''
-    pre-commit uninstall
     clear
     echo "【ツ】Welcome to your 💠 Terraform (stable) Sandbox!"
     printf "Terraform v%s\n" `terraform version --json | jq -r '.["terraform_version"]'`

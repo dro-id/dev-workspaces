@@ -1,4 +1,9 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, ... }: 
+
+let
+  enableAllPrecommitHooks = false;
+in
+{
 
   name = "Rust Development Sandbox";
 
@@ -87,8 +92,8 @@
 
   # Pre-commit hooks: Rust
   pre-commit.hooks = {
-    rustfmt.enable = true;
-    clippy.enable = true;
+    rustfmt.enable = enableAllPrecommitHooks;
+    clippy.enable = enableAllPrecommitHooks;
   };
 
   # Additional services (attached resources)
@@ -150,7 +155,6 @@
 
   # Startup commands
   enterShell = ''
-    pre-commit uninstall 
     clear
     echo "【ツ】Welcome to your 🦀 Rust (stable) Sandbox!"
     rustc --version

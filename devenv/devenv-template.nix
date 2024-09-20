@@ -1,4 +1,9 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, ... }:
+
+let
+  enableAllPrecommitHooks = false;
+in
+ {
 
   name = "{{stack}} Development Sandbox/Environment";
 
@@ -83,7 +88,7 @@
 
   # Pre-commit hooks: {{stack}}
   pre-commit.hooks = {
-    # <hook>.enable = true;
+    # <hook>.enable = enableAllPrecommitHooks;
   };
 
   # Additional services (attached resources)
@@ -123,7 +128,6 @@
 
   # Startup commands
   enterShell = ''
-    pre-commit uninstall
     clear
     echo "【ツ】Welcome to your {{stack}} (stable) Sandbox!"
     # Print version here

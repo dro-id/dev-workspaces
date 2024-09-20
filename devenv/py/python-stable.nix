@@ -1,4 +1,9 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, ... }: 
+
+let
+  enableAllPrecommitHooks = false;
+in
+{
 
   name = "Python Development Sandbox";
 
@@ -95,10 +100,10 @@
 
   # Pre-commit hooks: Python
   pre-commit.hooks = {
-    flake8.enable = true;
-    autoflake.enable = true;
-    black.enable = true;
-    mypy.enable = true;
+    flake8.enable = enableAllPrecommitHooks;
+    autoflake.enable = enableAllPrecommitHooks;
+    black.enable = enableAllPrecommitHooks;
+    mypy.enable = enableAllPrecommitHooks;
   };
 
   # Additional services (attached resources)
@@ -151,7 +156,6 @@
 
   # Startup commands
   enterShell = ''
-    pre-commit uninstall
     clear
     echo "【ツ】Welcome to your 🐍 Python Sandbox!"
     python --version
