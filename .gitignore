@@ -10,7 +10,7 @@
 *.httr-oauth*
  
 # Private Files
-*.json
+#*.json
 *.csv
 *.csv.gz
 *.tsv
