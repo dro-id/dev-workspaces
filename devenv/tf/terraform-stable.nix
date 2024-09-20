@@ -146,7 +146,7 @@
 
   # Startup commands
   enterShell = ''
-    pre-commit uninstall # the script is there but not installed by default
+    pre-commit uninstall
     clear
     echo "【ツ】Welcome to your 💠 Terraform (stable) Sandbox!"
     printf "Terraform v%s\n" `terraform version --json | jq -r '.["terraform_version"]'`

@@ -138,7 +138,7 @@
 
   # Startup commands
   enterShell = ''
-    pre-commit uninstall # the script is there but not installed by default
+    pre-commit uninstall
     clear
     echo "【ツ】Welcome to your ❄ Nix Sandbox!"
     nix --version
