@@ -9,3 +9,5 @@ inputs:
     url: github:NixOS/nixpkgs/nixos-unstable
 clean:
   enable: false
+imports:
+  - ./nix.nix

@@ -7,7 +7,6 @@ in
 
   name = "Nix Development Sandbox";
  
-
   # Enable devcontainer support
   # Note: features are not used and replaced by devenv
   devcontainer = {
