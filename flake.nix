@@ -51,12 +51,11 @@
         config.allowUnfree = true;
       };
       
-        devenv.shells.nix               = { imports = [ ./devenv/nix/nix.nix ]; };
-        devenv.shells.rust-nightly      = { imports = [ ./devenv/rs/rust-nightly.nix ]; };
-        devenv.shells.rust-stable       = { imports = [ ./devenv/rs/rust-stable.nix ]; };
-        devenv.shells.python-stable     = { imports = [ ./devenv/py/python-stable.nix ]; };
-        devenv.shells.javascript-stable = { imports = [ ./devenv/js/nodejs-lts.nix ]; };
-        devenv.shells.terraform-stable  = { imports = [ ./devenv/tf/terraform-stable.nix ]; };
+        devenv.shells.nix               = { imports = [ ./devenv/nix/devenv.nix ]; };
+        devenv.shells.rust-stable       = { imports = [ ./devenv/rs/devenv.nix ]; };
+        devenv.shells.python-stable     = { imports = [ ./devenv/py/devenv.nix ]; };
+        devenv.shells.javascript-stable = { imports = [ ./devenv/js/devenv.nix ]; };
+        devenv.shells.terraform-stable  = { imports = [ ./devenv/tf/devenv.nix ]; };
         
         devShells.default = config.devShells.nix;
         
