@@ -57,6 +57,7 @@
   "secrets": {},
   "updateContentCommand": {
     "cd": "cd devenv/nix/",
+    "pwd": "pwd",
     "devenv": "devenv test"
   }
 }
