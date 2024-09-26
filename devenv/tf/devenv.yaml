@@ -8,6 +8,4 @@ inputs:
   nixpkgs-unstable:
     url: github:NixOS/nixpkgs/nixos-unstable
 clean:
-  enable: false
-imports:
-  - ./terraform-stable.nix
+  enabled: false
