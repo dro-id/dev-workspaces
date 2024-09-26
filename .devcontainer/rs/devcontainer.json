@@ -1,1 +1,61 @@
-../../devenv/rs/.devcontainer.json
+{
+  "customizations": {
+    "codespaces": {
+      "openFiles": [
+        "README.md"
+      ]
+    },
+    "vscode": {
+      "extensions": [
+        "github.github-vscode-theme",
+        "github.codespaces",
+        "github.copilot",
+        "github.copilot-chat",
+        "asciidoctor.asciidoctor-vscode",
+        "mkhl.direnv",
+        "rust-lang.rust-analyzer",
+        "serayuzgur.crates",
+        "vadimcn.vscode-lldb"
+      ],
+      "settings": {
+        "asciidoc": {
+          "antora": {
+            "enableAntoraSupport": false
+          },
+          "extensions": {
+            "enableKroki": true
+          }
+        },
+        "editor": {
+          "formatOnPaste": true,
+          "formatOnSave": true,
+          "minimap": {
+            "autohide": true
+          }
+        },
+        "update": {
+          "showReleaseNotes": false
+        },
+        "window": {
+          "commandCenter": false
+        },
+        "workbench": {
+          "colorTheme": "GitHub Dark Default",
+          "preferredDarkColorTheme": "GitHub Dark Default",
+          "preferredHighContrastColorTheme": "GitHub Dark High Contrast",
+          "preferredHighContrastLightColorTheme": "GitHub Light High Contrast",
+          "preferredLightColorTheme": "GitHub Light Default"
+        }
+      }
+    }
+  },
+  "hostRequirements": {
+    "cpus": 8,
+    "memory": "8gb",
+    "storage": "32gb"
+  },
+  "image": "ghcr.io/cachix/devenv:latest",
+  "overrideCommand": false,
+  "secrets": {},
+  "updateContentCommand": "devenv test"
+}
