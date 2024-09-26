@@ -205,3 +205,4 @@ fabric.properties
 # Generated
 .pre-commit-config.yaml
 .devenv/
+.devcontainer.json
