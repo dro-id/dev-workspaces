@@ -43,6 +43,7 @@ ENV/
 env.bak/
 venv.bak/
 .devenv/
+.devenv.*/
 
 ## Linux
 
@@ -204,5 +205,6 @@ fabric.properties
 
 # Generated
 .pre-commit-config.yaml
-.devenv/
+devenv.lock
+.devenv.flake.nix
 .devcontainer.json
