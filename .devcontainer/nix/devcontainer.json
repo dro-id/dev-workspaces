@@ -47,7 +47,7 @@
       }
     }
   },
-  "hostRequirements": {
+  "hostRequirements": {    
     "cpus": 2,
     "memory": "8gb",
     "storage": "32gb"
@@ -55,8 +55,8 @@
   "image": "ghcr.io/cachix/devenv:latest",
   "overrideCommand": false,
   "secrets": {},
-  "updateContentCommand": [
-    "cd devenv/nix/",
-    "devenv test"
-  ]
+  "updateContentCommand": {
+    "cd": "cd devenv/nix/",
+    "devenv": "devenv test"
+  }
 }
