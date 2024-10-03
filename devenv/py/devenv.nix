@@ -40,12 +40,7 @@ in
             "asciidoctor.asciidoctor-vscode"
             "mkhl.direnv"
             # Notebooks and additional features
-            "ms-toolsai.jupyter"
-            "ms-toolsai.jupyter-keymap"
-            "ms-toolsai.jupyter-renderers"
-            "ms-toolsai.vscode-jupyter-cell-tags"
-            "ms-toolsai.vscode-jupyter-slideshow"
-            "ms-toolsai.vscode-jupyter-powertoys" # Pyodide
+            "marimo-team.vscode-marimo"
             # Stack specific
             "ms-python.python"
           ]; 
