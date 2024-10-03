@@ -13,12 +13,7 @@
         "github.copilot-chat",
         "asciidoctor.asciidoctor-vscode",
         "mkhl.direnv",
-        "ms-toolsai.jupyter",
-        "ms-toolsai.jupyter-keymap",
-        "ms-toolsai.jupyter-renderers",
-        "ms-toolsai.vscode-jupyter-cell-tags",
-        "ms-toolsai.vscode-jupyter-slideshow",
-        "ms-toolsai.vscode-jupyter-powertoys",
+        "marimo-team.vscode-marimo",
         "ms-python.python"
       ],
       "settings": {
@@ -64,5 +59,8 @@
   "image": "ghcr.io/cachix/devenv:latest",
   "overrideCommand": false,
   "secrets": {},
-  "updateContentCommand": "devenv test"
+  "updateContentCommand": {
+    "cd": "cd devenv/py/",
+    "devenv": "devenv test"
+  }
 }

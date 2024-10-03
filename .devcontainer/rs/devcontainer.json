@@ -57,5 +57,8 @@
   "image": "ghcr.io/cachix/devenv:latest",
   "overrideCommand": false,
   "secrets": {},
-  "updateContentCommand": "devenv test"
+  "updateContentCommand": {
+    "cd": "cd devenv/rs/",
+    "devenv": "devenv test"
+  }
 }
