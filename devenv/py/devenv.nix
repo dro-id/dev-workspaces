@@ -86,10 +86,8 @@ in
   # Note: the venv is deactivated by default
   languages.python = {
     enable = true;
-    poetry = {
+    uv = {
       enable = true;
-      install.quiet = true;
-      activate.enable = false;
     };
   };
 
@@ -131,21 +129,20 @@ in
       gh create "''${my_repo_name}" --clone --template "https://github.com/''${my_orga}/''${DEVENV_STACK}-workspace.git"
     '';
     init.exec = ''
-      poetry config virtualenvs.in-project true
-      poetry init
-      poetry install 
+      uv init
+      uv --all-extras --dev
     '';
     update.exec = ''
-      poetry update $*
+      uv lock --upgrade
     '';
     build.exec = ''
-      poetry build
+      uv build
     '';
     run.exec = ''
-      poetry run $*
+      uv run $*
     '';
     test.exec = ''
-      poetry test
+      uv run pytest tests
     '';
   };
 
@@ -154,7 +151,7 @@ in
     clear
     echo "【ツ】Welcome to your 🐍 Python Sandbox!"
     python --version
-    poetry --version
+    uv --version
   '';
 
 }
