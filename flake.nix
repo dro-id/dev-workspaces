@@ -51,11 +51,12 @@
         config.allowUnfree = true;
       };
       
-        devenv.shells.nix               = { imports = [ ./devenv/nix/devenv.nix ]; };
-        devenv.shells.rust-stable       = { imports = [ ./devenv/rs/devenv.nix ]; };
-        devenv.shells.python-stable     = { imports = [ ./devenv/py/devenv.nix ]; };
-        devenv.shells.javascript-stable = { imports = [ ./devenv/js/devenv.nix ]; };
-        devenv.shells.terraform-stable  = { imports = [ ./devenv/tf/devenv.nix ]; };
+        devenv.shells.nix                   = { imports = [ ./devenv/nix/devenv.nix ]; };
+        devenv.shells.rust-stable           = { imports = [ ./devenv/rs/devenv.nix ]; };
+        devenv.shells.python-stable         = { imports = [ ./devenv/py/devenv.nix ]; };
+        devenv.shells.javascript-stable     = { imports = [ ./devenv/js/devenv.nix ]; };
+        devenv.shells.javascript-alt-stable = { imports = [ ./devenv/js-alt/devenv.nix ]; }; # Alternative based on deno
+        devenv.shells.terraform-stable      = { imports = [ ./devenv/tf/devenv.nix ]; };
         
         devShells.default = config.devShells.nix;
         
