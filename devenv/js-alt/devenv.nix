@@ -91,7 +91,7 @@ in
   # Environment variables
   dotenv.enable = false;
   env = {
-    DEVENV_STACK = "javascript";
+    DEVENV_STACK = "javascript-deno";
   };
  
   # Special hosts
