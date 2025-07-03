@@ -91,7 +91,7 @@ in
   };
 
   # Pre-commit hooks: {{stack}}
-  pre-commit.hooks = {
+  git-hooks.hooks = {
     solidity.enable = enableAllPrecommitHooks;
   };
 

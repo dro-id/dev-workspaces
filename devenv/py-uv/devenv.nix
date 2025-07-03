@@ -92,7 +92,7 @@ in
   };
 
   # Pre-commit hooks: Python
-  pre-commit.hooks = {
+  git-hooks.hooks = {
     flake8.enable = enableAllPrecommitHooks;
     autoflake.enable = enableAllPrecommitHooks;
     black.enable = enableAllPrecommitHooks;

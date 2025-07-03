@@ -93,7 +93,7 @@ in
   };
   
   # Pre-commit hooks: Terraform
-  pre-commit.hooks = {
+  git-hooks.hooks = {
     terraform-format.enable = enableAllPrecommitHooks; # formatter
     tflint.enable = enableAllPrecommitHooks;           # linter
   };

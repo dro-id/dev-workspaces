@@ -89,7 +89,7 @@ in
   };
 
   # Pre-commit hooks: Javascript
-  pre-commit.hooks = {
+  git-hooks.hooks = {
     eslint.enable = enableAllPrecommitHooks;
   };
 

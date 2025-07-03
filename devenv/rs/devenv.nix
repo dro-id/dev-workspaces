@@ -91,7 +91,7 @@ in
   };
 
   # Pre-commit hooks: Rust
-  pre-commit.hooks = {
+  git-hooks.hooks = {
     rustfmt.enable = enableAllPrecommitHooks;
     clippy.enable = enableAllPrecommitHooks;
   };

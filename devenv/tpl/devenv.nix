@@ -87,7 +87,7 @@ in
   };
 
   # Pre-commit hooks: {{stack}}
-  pre-commit.hooks = {
+  git-hooks.hooks = {
     # <hook>.enable = enableAllPrecommitHooks;
   };
 

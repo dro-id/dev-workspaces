@@ -79,7 +79,7 @@ in
   ];
 
   # Pre-commit hooks: Deno
-  pre-commit.hooks = {
+  git-hooks.hooks = {
     deno-fmt.enable = enableAllPrecommitHooks;
     deno-lint.enable = enableAllPrecommitHooks;
   };

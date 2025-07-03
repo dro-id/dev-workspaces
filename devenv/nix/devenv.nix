@@ -85,7 +85,7 @@ in
   };
 
   # Pre-commit hooks: Nix
-  pre-commit.hooks = {
+  git-hooks.hooks = {
     nixfmt = {
       enable = enableAllPrecommitHooks;
       package = pkgs.nixfmt-classic;
