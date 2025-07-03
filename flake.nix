@@ -31,11 +31,15 @@
     };
 
     # Overlays
-    # No overlays for now
+    # Foundry for Solidity development
+    foundry = {
+      url = github:shazow/foundry.nix;
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
   };
 
-  outputs = { self, flake-parts, nixpkgs, nixpkgs-unstable, nur, devenv, fenix, ... } @ inputs:
+  outputs = { self, flake-parts, nixpkgs, nixpkgs-unstable, nur, devenv, fenix, foundry, ... } @ inputs:
     flake-parts.lib.mkFlake { inherit inputs; } {
 
       imports = [

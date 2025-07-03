@@ -41,11 +41,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1751418294,
-        "narHash": "sha256-9uNvQpop5vZiDD/zIacpXKLAiFV1TfkDGks39tcRKgg=",
+        "lastModified": 1751522711,
+        "narHash": "sha256-nHRuGwIMKuyazxn0f9WmdOY7jeSWg7AOwXUdntQDd1s=",
         "owner": "cachix",
         "repo": "devenv",
-        "rev": "ea17286a36947f6702ce21a18677006dc1e01ffd",
+        "rev": "2c3cfc51e6b6445e8450905d90ac3662b1fa35de",
         "type": "github"
       },
       "original": {
@@ -148,6 +148,42 @@
       "original": {
         "owner": "hercules-ci",
         "repo": "flake-parts",
+        "type": "github"
+      }
+    },
+    "flake-utils": {
+      "locked": {
+        "lastModified": 1644229661,
+        "narHash": "sha256-1YdnJAsNy69bpcjuoKdOYQX0YxZBiCYZo4Twxerqv7k=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "3cecb5b042f7f209c56ffd8371b2711a290ec797",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "foundry": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1751447467,
+        "narHash": "sha256-UBUailglPPS36nnX7UoZvvDRD2DyDIHIzVwZXFwn/mU=",
+        "owner": "shazow",
+        "repo": "foundry.nix",
+        "rev": "28bd31cf2d9e33de1b1a186b9b042e5ce058892c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "shazow",
+        "repo": "foundry.nix",
         "type": "github"
       }
     },
@@ -333,11 +369,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1751464546,
-        "narHash": "sha256-DCPeFJC6ih3cFhSwxBNNgbbHakCupR9fE5yX8DNWOzQ=",
+        "lastModified": 1751524939,
+        "narHash": "sha256-4m+CNRrzMBTHsZF5UsUFUSxhtPkclCY+amnW4abnnQY=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "35af9e4796b6659705276544207796b5d05720e1",
+        "rev": "5d3a5960a34a46d24b7bc416b3f2ef0db6d5ab45",
         "type": "github"
       },
       "original": {
@@ -351,6 +387,7 @@
         "devenv": "devenv",
         "fenix": "fenix",
         "flake-parts": "flake-parts_2",
+        "foundry": "foundry",
         "nixpkgs": "nixpkgs_3",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nur": "nur"
