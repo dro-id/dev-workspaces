@@ -114,6 +114,12 @@ in
   # Scripts: {{stack}}
   # Can be used as aliases, built your own lightsaber
   scripts = {
+    # Status message
+    status.exec = ''
+      clear
+      echo "【ツ】Welcome to your Solidity (foundry) Sandbox!"
+      # Print version here
+    '';
     # Install global addons
     setup.exec = ''
     # TODO: Add more option on forking Ethereum/Vaulta
@@ -138,12 +144,5 @@ in
     '';
     # TODO: Add more as a catalog of cast actions
   };
-
-  # Startup commands
-  enterShell = ''
-    clear
-    echo "【ツ】Welcome to your Solidity (foundry) Sandbox!"
-    # Print version here
-  '';
 
 }

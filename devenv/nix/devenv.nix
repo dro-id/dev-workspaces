@@ -113,6 +113,12 @@ in
   # Scripts: Nix
   # Can be used as aliases
   scripts = {
+    # Status message
+    status.exec = ''
+      clear
+      echo "【ツ】Welcome to your ❄ Nix Sandbox!"
+      nix --version
+    '';
     # Workflow shortcuts
     new.exec = ''
       printf "\033[1m%s\033[0m\n" "Create New Project"
@@ -139,12 +145,5 @@ in
       nix run $1 -- switch --flake $2
     '';
   };
-
-  # Startup commands
-  enterShell = ''
-    clear
-    echo "【ツ】Welcome to your ❄ Nix Sandbox!"
-    nix --version
-  '';
 
 }

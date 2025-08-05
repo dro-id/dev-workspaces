@@ -112,6 +112,13 @@ in
   # Scripts: Javascript
   # Can be used as aliases
   scripts = {
+    # Status message
+    status.exec = ''
+      clear
+      echo "【ツ】Welcome to your 🦎 Javascript Sandbox!"
+      echo "node version: $(node --version)"
+      echo "npm version: $(npm --version)"
+    '';
     # Workflow shortcuts
     new.exec = ''
       printf "\033[1m%s\033[0m\n" "Create New Project"
@@ -133,13 +140,5 @@ in
       npm test
     '';
   };
-
-  # Startup commands
-  enterShell = ''
-    clear
-    echo "【ツ】Welcome to your 🦎 Javascript Sandbox!"
-    echo "node version: $(node --version)"
-    echo "npm version: $(npm --version)"
-  '';
 
 }

@@ -120,6 +120,18 @@ in
   # Scripts: Terraform
   # Can be used as aliases
   scripts = {
+    # Status message
+    status.exec = ''
+      clear
+      echo "【ツ】Welcome to your 💠 Terraform (stable) Sandbox!"
+      printf "Terraform v%s\n" `terraform version --json | jq -r '.["terraform_version"]'`
+      printf "Terragrunt %s\n" `terragrunt -v | cut -d " " -f 3`
+      printf "Golang v%s\n" `go version | cut -d " " -f 3 | tr -d "go"`
+      printf "\nIt comes with some additional optional goodies...\n"
+      printf "Trivy %s\n" `trivy -v | cut -d " " -f 2`
+      printf "Localstack v%s\n" `localstack --version`
+      printf "Infracost %s\n\n" `infracost --version 2>/dev/null | cut -d " " -f 2`
+    '';
     # Workflow shortcuts
     new.exec = ''
       printf "\033[1m%s\033[0m\n" "Create New Project"
@@ -148,18 +160,5 @@ in
       terragrunt apply
     '';
   };
-
-  # Startup commands
-  enterShell = ''
-    clear
-    echo "【ツ】Welcome to your 💠 Terraform (stable) Sandbox!"
-    printf "Terraform v%s\n" `terraform version --json | jq -r '.["terraform_version"]'`
-    printf "Terragrunt %s\n" `terragrunt -v | cut -d " " -f 3`
-    printf "Golang v%s\n" `go version | cut -d " " -f 3 | tr -d "go"`
-    printf "\nIt comes with some additional optional goodies...\n"
-    printf "Trivy %s\n" `trivy -v | cut -d " " -f 2`
-    printf "Localstack v%s\n" `localstack --version`
-    printf "Infracost %s\n\n" `infracost --version 2>/dev/null | cut -d " " -f 2`
-  '';
 
 }

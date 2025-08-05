@@ -1,0 +1,54 @@
+{
+  "customizations": {
+    "codespaces": {
+      "openFiles": [
+        "README.md"
+      ]
+    },
+    "vscode": {
+      "extensions": [
+        "github.github-vscode-theme",
+        "github.codespaces",
+        "github.copilot",
+        "github.copilot-chat",
+        "mkhl.direnv",
+        "JuanBlanco.solidity"
+      ],
+      "settings": {
+        "editor": {
+          "defaultFormatter": "JuanBlanco.solidity",
+          "formatOnPaste": true,
+          "formatOnSave": true,
+          "minimap": {
+            "autohide": true
+          }
+        },
+        "solidity.formatter": "forge",
+        "solidity.packageDefaultDependenciesContractsDirectory": "src",
+        "solidity.packageDefaultDependenciesDirectory": "lib",
+        "update": {
+          "showReleaseNotes": false
+        },
+        "window": {
+          "commandCenter": false
+        },
+        "workbench": {
+          "colorTheme": "GitHub Dark Default",
+          "preferredDarkColorTheme": "GitHub Dark Default",
+          "preferredHighContrastColorTheme": "GitHub Dark High Contrast",
+          "preferredHighContrastLightColorTheme": "GitHub Light High Contrast",
+          "preferredLightColorTheme": "GitHub Light Default"
+        }
+      }
+    }
+  },
+  "hostRequirements": {
+    "cpus": 2,
+    "memory": "8gb",
+    "storage": "32gb"
+  },
+  "image": "ghcr.io/cachix/devenv/devcontainer:latest",
+  "overrideCommand": false,
+  "secrets": {},
+  "updateContentCommand": "devenv test"
+}

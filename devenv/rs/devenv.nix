@@ -134,6 +134,13 @@ in
       printf " ✓ Creating a new repo \033[3m%s\033[0m in organisation \033[3m%s\033[0m based on template \033[3m%s\033[0m!\n" "''${my_repo_name}" "''${my_orga}" "''${DEVENV_STACK}-template" 
       gh create "''${my_repo_name}" --clone --template "https://github.com/''${my_orga}/''${DEVENV_STACK}-workspace.git"
     '';
+    # Status message
+    status.exec = ''
+      clear
+      echo "【ツ】Welcome to your 🦀 Rust (stable) Sandbox!"
+      rustc --version
+      cargo --version
+    '';
     init.exec = ''
       cargo init
     '';
@@ -152,13 +159,5 @@ in
       cargo clean
     ''; 
   };
-
-  # Startup commands
-  enterShell = ''
-    clear
-    echo "【ツ】Welcome to your 🦀 Rust (stable) Sandbox!"
-    rustc --version
-    cargo --version
-  '';
 
 }

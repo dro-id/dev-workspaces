@@ -103,6 +103,12 @@ in
   # Scripts: Javascript (Deno) 
   # Can be used as aliases
   scripts = {
+    # Status message
+    status.exec = ''
+      clear
+      echo "【ツ】Welcome to your 🦕 Deno Sandbox!"
+      echo "deno version: $(deno --version)"
+    '';
     # Workflow shortcuts
     new.exec = ''
       printf "\033[1m%s\033[0m\n" "Create New Project"
@@ -129,12 +135,5 @@ in
       deno lint
     '';
   };
-
-  # Startup commands
-  enterShell = ''
-    clear
-    echo "【ツ】Welcome to your 🦕 Deno Sandbox!"
-    echo "deno version: $(deno --version)"
-  '';
 
 }

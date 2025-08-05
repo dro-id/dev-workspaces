@@ -118,6 +118,13 @@ in
   # Scripts: Python
   # Can be used as aliases
   scripts = {
+    # Status message
+    status.exec = ''
+      clear
+      echo "【ツ】Welcome to your 🐍 Python Sandbox!"
+      python --version
+      uv --version
+    '';
     # Workflow shortcuts
     new.exec = ''
       printf "\033[1m%s\033[0m\n" "Create New Project"
@@ -145,13 +152,5 @@ in
       uv run pytest tests
     '';
   };
-
-  # Startup commands
-  enterShell = ''
-    clear
-    echo "【ツ】Welcome to your 🐍 Python Sandbox!"
-    python --version
-    uv --version
-  '';
 
 }

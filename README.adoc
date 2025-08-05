@@ -75,7 +75,7 @@ Be sure to have `Nix` installed for your system if you want to use the configura
   nix develop --impure https://github.com/dro-id/dev-workspaces#<devenv-configuration>
 ----
 
-Or if you deide to clone it...
+Or if you decide to clone it...
 
 [source,bash]
 ----

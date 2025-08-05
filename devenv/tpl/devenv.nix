@@ -110,6 +110,12 @@ in
   # Scripts: {{stack}}
   # Can be used as aliases, built your own lightsaber
   scripts = {
+    # Status message
+    status.exec = ''
+      clear
+      echo "【ツ】Welcome to your {{stack}} (stable) Sandbox!"
+      # Print version here
+    '';
     # Install global addons
     setup.exec = ''
     '';
@@ -125,12 +131,5 @@ in
     clean.exec = ''
     ''; 
   };
-
-  # Startup commands
-  enterShell = ''
-    clear
-    echo "【ツ】Welcome to your {{stack}} (stable) Sandbox!"
-    # Print version here
-  '';
 
 }
