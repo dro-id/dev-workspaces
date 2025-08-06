@@ -122,25 +122,25 @@ in
     '';
     # Install global addons
     setup.exec = ''
-    # TODO: Add more option on forking Ethereum/Vaulta
-    anvil
+      # TODO: Add more option on forking Ethereum/Vaulta
+      anvil
     '';
     # Workflow shortcuts
     init.exec = ''
-    forge init .
+      forge init .
     '';
     repl.exec = ''
-    chisel
+      chisel
     '';
     build.exec = ''
-    forge build
+      forge build
     '';
     test.exec = ''
-    forge test
+      forge test
     '';
     clean.exec = ''
-    forge clean
-    forge cache clean
+      forge clean
+      forge cache clean
     '';
     # TODO: Add more as a catalog of cast actions
   };
