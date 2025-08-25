@@ -5,7 +5,7 @@ let
 in
 {
 
-  name = "Deno Development Sandbox";
+  name = "Bun Development Sandbox";
 
   # Enable devcontainer support
   # Note: features are not used and replaced by devenv
@@ -38,7 +38,7 @@ in
             "asciidoctor.asciidoctor-vscode"
             "mkhl.direnv"
             # Stack specific
-            "denoland.vscode-deno"
+            "oven.bun-vscode"
             "bradlc.vscode-tailwindcss"
           ]; 
         };
@@ -75,14 +75,20 @@ in
     git
     gh
     jq
-    deno
   ];
 
-  # Pre-commit hooks: Deno
-  git-hooks.hooks = {
-    deno-fmt.enable = enableAllPrecommitHooks;
-    deno-lint.enable = enableAllPrecommitHooks;
+  # Toolchain: javascript with bun (slim)
+  languages.javascript = {
+    enable = true;
+    package = pkgs.nodejs;
+    bun = {
+      enable = true;
+      install.enable = false;
+    };
   };
+
+  # Pre-commit hooks: Bun
+  git-hooks.hooks = {};
 
   # Additional services (attached resources)
   # No additional services, this is a sandbox
@@ -91,7 +97,7 @@ in
   # Environment variables
   dotenv.enable = false;
   env = {
-    DEVENV_STACK = "javascript-deno";
+    DEVENV_STACK = "javascript-bun";
   };
  
   # Special hosts
@@ -100,14 +106,14 @@ in
     "locahost" = "127.0.0.1";
   };
 
-  # Scripts: Javascript (Deno) 
+  # Scripts: Javascript (Bun) 
   # Can be used as aliases
   scripts = {
     # Status message
     status.exec = ''
       clear
-      echo "【ツ】Welcome to your 🦕 Deno Sandbox!"
-      echo "deno version: $(deno --version)"
+      echo "【ツ】Welcome to your Bun Sandbox!"
+      echo "bun version: $(bun --version)"
     '';
     # Workflow shortcuts
     new.exec = ''
@@ -120,19 +126,19 @@ in
       gh create "''${my_repo_name}" --clone --template "https://github.com/''${my_orga}/''${DEVENV_STACK}-workspace.git"
     '';
     init.exec = ''
-      deno init
+      bun init
     '';
     run.exec = ''
-      deno run $*
+      bun run $*
     '';
     test.exec = ''
-      deno test
+      bun test
     '';
     fmt.exec = ''
-      deno fmt
+      bun fmt
     '';
     lint.exec = ''
-      deno lint
+      bun lint
     '';
   };
 

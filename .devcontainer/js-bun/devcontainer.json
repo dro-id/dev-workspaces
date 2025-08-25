@@ -14,7 +14,7 @@
         "asciidoctor.asciidoctor-vscode",
         "mkhl.direnv",
         "standard.vscode-standard",
-        "denoland.vscode-deno",
+        "oven.bun-vscode",
         "bradlc.vscode-tailwindcss"
       ],
       "settings": {
