@@ -60,8 +60,9 @@
         devenv.shells.solidity-foundry-stable   = { imports = [ ./devenv/sol-f/devenv.nix ]; };
         devenv.shells.python-uv-stable          = { imports = [ ./devenv/py-uv/devenv.nix ]; };
         devenv.shells.javascript-npm-stable     = { imports = [ ./devenv/js-npm/devenv.nix ]; };
-        devenv.shells.javascript-bun-stable    = { imports = [ ./devenv/js-bun/devenv.nix ]; };
+        devenv.shells.javascript-bun-stable     = { imports = [ ./devenv/js-bun/devenv.nix ]; };
         devenv.shells.terraform-stable          = { imports = [ ./devenv/tf/devenv.nix ]; };
+        devenv.shells.cdktf-stable              = { imports = [ ./devenv/cdktf/devenv.nix ]; };
         
         devShells.default = config.devShells.nix;
         
