@@ -78,7 +78,6 @@ in
     jq
     # Stack specific, mandatory
     awscli2     # root cli
-    cdktf-cli   # CDKTF CLI
     # Stack specific, optional
     localstack  # Run locally, mocking AWS api 
     trivy       # Static scanning 
@@ -89,6 +88,12 @@ in
   languages = {
     terraform.enable = true;
     typescript.enable = true;
+    # For the cdktf
+    javascript = {
+      enable = true;
+      package = pkgs.nodejs;
+        npm.install.enable = true;
+    };
   };
   
   # Pre-commit hooks: CDKTF
@@ -120,17 +125,20 @@ in
   # Scripts: CDKTF
   # Can be used as aliases
   scripts = {
+    cdktf.exec = ''
+      npx cdktf-cli "$@"
+    '';
     # Status message
     status.exec = ''
       clear
       echo "【ツ】Welcome to your 🔧 CDKTF (stable) Sandbox!"
       printf "Terraform v%s\n" `terraform version --json | jq -r '.["terraform_version"]'`
-      printf "CDKTFv%s\n" `cdktf --version 2>/dev/null | head -n 1`
-      printf "Node v%s\n" `node --version`
+      printf "CDKTF v%s\n" `cdktf --version 2>/dev/null | head -n 1`
+      printf "Node %s\n" `node --version`
       printf "TypeScript v%s\n" `tsc --version | cut -d " " -f 2`
       printf "\nIt comes with some additional optional goodies...\n"
       printf "Trivy %s\n" `trivy -v | cut -d " " -f 2`
-      printf "Localstack v%s\n" `localstack --version`
+      printf "Localstack v%s\n" `localstack --version | cut -d " " -f 3`
       printf "Infracost %s\n\n" `infracost --version 2>/dev/null | cut -d " " -f 2`
     '';
     # Workflow shortcuts
