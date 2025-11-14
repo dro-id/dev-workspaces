@@ -129,7 +129,7 @@ in
       printf "Golang v%s\n" `go version | cut -d " " -f 3 | tr -d "go"`
       printf "\nIt comes with some additional optional goodies...\n"
       printf "Trivy %s\n" `trivy -v | cut -d " " -f 2`
-      printf "Localstack v%s\n" `localstack --version`
+      printf "Localstack v%s\n" `localstack --version | cut -d " " -f 3`
       printf "Infracost %s\n\n" `infracost --version 2>/dev/null | cut -d " " -f 2`
     '';
     # Workflow shortcuts
